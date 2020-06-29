@@ -207,17 +207,17 @@ end
 def big_shoe_rebounds
   max_value = 0
   biggest_shoe_name = ""
-  team_name = ""
+  home_away = ""
   i = ""
   game_hash.each do |team, team_value|
     team_value[:players].each do |element|
       if element[:shoe] > max_value
         max_value = element[:shoe]
         biggest_shoe_name = element[:player_name]
-        team_name = team
+        home_away = team
         i = team_value[:players].index(element)
       end
     end
   end
-  return game_hash[][:players][i][:rebounds]
+  return game_hash[home_away][:players][i][:rebounds]
 end
