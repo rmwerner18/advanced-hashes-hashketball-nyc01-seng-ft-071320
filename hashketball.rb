@@ -198,8 +198,8 @@ def player_stats(player)
     team_details[:players].each do |element|
       if element[:player_name] == player
         answer = element
+        return answer
       end
-    return answer
     end
   end
 end
