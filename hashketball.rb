@@ -215,7 +215,7 @@ def big_shoe_rebounds
         max_value = element[:shoe]
         biggest_shoe_name = element[:player_name]
         team = element[:team_name]
-        i = team_value[:players][element].index
+        i = team_value[:players].index(element)
       end
     end
   end
