@@ -254,3 +254,9 @@ def winning_team
     return game_hash[:away][:team_name]
   end
 end
+
+def player_with_longest_name
+  name_length = 0
+  player_name = ""
+  game_hash.each do |
+end
