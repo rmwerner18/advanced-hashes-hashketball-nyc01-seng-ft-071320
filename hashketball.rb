@@ -235,5 +235,3 @@ def most_points_scored
   end
   return answer
 end
-
-
