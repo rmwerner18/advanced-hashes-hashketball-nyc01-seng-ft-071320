@@ -129,20 +129,6 @@ def game_hash
 end
 
 # Write code here
-#def num_points_scored(player)
-#  keys = game_hash.keys
-#  count = 0
-#  while count < 2 do
-#    count2 = 0
-#    while count2 < game_hash[:home][:players].length do
-#      if game_hash[keys[count]][:players][count2][:player_name] == player
-#        return game_hash[keys[count]][:players][count2][:points]
-#      end
-#      count2 += 1
-#    end
-#  count += 1
-#  end
-#end
 
 def num_points_scored(player)
   answer = ""
@@ -206,7 +192,10 @@ def player_numbers(team_name)
   return numbers
 end
 
-#def player_stats(player)
-#  game_hash.each do |team, team_details|
-#    if team_details[:players]
-#end
+def player_stats(player)
+  answer = ""
+  game_hash.each do |team, team_details|
+    team_details[:players].each do |element|
+      if element[:player_name] == player
+        answer = element
+end
