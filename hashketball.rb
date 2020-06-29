@@ -1,4 +1,6 @@
 # Write your code below game_hash
+require "pry"
+
 def game_hash
   {
     home: {
@@ -127,3 +129,84 @@ def game_hash
 end
 
 # Write code here
+#def num_points_scored(player)
+#  keys = game_hash.keys
+#  count = 0
+#  while count < 2 do
+#    count2 = 0
+#    while count2 < game_hash[:home][:players].length do
+#      if game_hash[keys[count]][:players][count2][:player_name] == player
+#        return game_hash[keys[count]][:players][count2][:points]
+#      end
+#      count2 += 1
+#    end
+#  count += 1
+#  end
+#end
+
+def num_points_scored(player)
+  answer = ""
+  game_hash.each do |team, team_details|
+    team_details[:players].each do |element|
+      if element[:player_name] == player
+        answer = element[:points]
+        return answer
+      end
+    end
+  end
+end
+
+def shoe_size(player)
+  keys = game_hash.keys
+  count = 0
+  while count < 2 do
+    count2 = 0
+    while count2 < 5 do
+      if game_hash[keys[count]][:players][count2][:player_name] == player
+        return game_hash[keys[count]][:players][count2][:shoe]
+      end
+    count2 += 1
+    end
+  count += 1
+  end
+end
+
+def team_colors(name)
+  keys = game_hash.keys
+  count = 0
+  while count < 2 do
+    if game_hash[keys[count]][:team_name] == name
+      return game_hash[keys[count]][:colors]
+    end
+  count += 1
+  end
+end
+
+def team_names
+  names = []
+  keys = game_hash.keys
+  keys.each do |team|
+    names << game_hash[team][:team_name]
+  end
+  return names
+end
+
+def player_numbers(team_name)
+  numbers = []
+  keys = game_hash.keys
+  keys.each do |team|
+    if game_hash[team][:team_name] == team_name
+      count = 0
+      while count < 5 do
+        numbers << game_hash[team][:players][count][:number]
+        count += 1
+      end
+    end
+  end
+  return numbers
+end
+
+#def player_stats(player)
+#  game_hash.each do |team, team_details|
+#    if team_details[:players]
+#end
